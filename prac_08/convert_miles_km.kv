@@ -1,0 +1,47 @@
+BoxLayout:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+
+        TextInput:
+            id: input_miles
+            text: '0'
+            multiline: False
+            font_size: 48
+            on_text: app.handle_calculate()
+            background_color: (1, 1, 1, 1)
+            foreground_color: (0, 0, 0, 1)
+            halign: 'center'
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.3
+            spacing: 5
+
+            Button:
+                text: 'Up'
+                font_size: 24
+                background_color: (0.2, 0.2, 0.2, 1)
+                color: (1, 1, 1, 1)
+                on_press: app.handle_increment(1)
+
+            Button:
+                text: 'Down'
+                font_size: 24
+                background_color: (0.2, 0.2, 0.2, 1)
+                color: (1, 1, 1, 1)
+                on_press: app.handle_increment(-1)
+
+
+
+    Label:
+        id: output_label
+        text: app.output_text
+        font_size: 48
+        color: (1, 1, 0, 1)
+        halign: 'center'
+        valign: 'middle'
